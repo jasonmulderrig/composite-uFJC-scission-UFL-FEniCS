@@ -36,7 +36,7 @@ Information
 Citation
 ********
 
-\Jason Mulderrig, Brandon Talamini, and Nikolaos Bouklas, ``composite-ufjc-scission-ufl-fenics``: the Python package for the composite uFJC model with scission implemented in the Unified Form Language (UFL) in FEniCS, `Zenodo (2023) <https://doi.org/10.5281/zenodo.7335564>`_.
+\Jason Mulderrig, Brandon Talamini, and Nikolaos Bouklas, ``composite-ufjc-scission-ufl-fenics``: the Python package for the composite uFJC model with scission implemented in the Unified Form Language (UFL) in FEniCS, `Zenodo (2023) <https://doi.org/10.5281/zenodo.7738019>`_.
 
 \Jason Mulderrig, Brandon Talamini, and Nikolaos Bouklas, ``composite-ufjc-scission``: the Python package for the composite uFJC model with scission, `Zenodo (2022) <https://doi.org/10.5281/zenodo.7335564>`_.
 
@@ -57,5 +57,5 @@ Citation
 .. |license| image:: https://img.shields.io/github/license/jasonmulderrig/composite-uFJC-scission-UFL-FEniCS?label=License
     :target: https://github.com/jasonmulderrig/composite-uFJC-scission-UFL-FEniCS/LICENSE
 
-.. |zenodo| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.7335564.svg
-   :target: https://doi.org/10.5281/zenodo.7335564
+.. |zenodo| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.7738019.svg
+   :target: https://doi.org/10.5281/zenodo.7738019
