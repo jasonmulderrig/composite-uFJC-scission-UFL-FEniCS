@@ -4,7 +4,7 @@ composite uFJC scission UFL FEniCS
 
 |build| |pyversions| |pypi| |license| |zenodo|
 
-The Python package for the composite uFJC model with scission implemented in the Unified Form Language (UFL) for FEniCS.
+The Python package for the composite uFJC model with scission implemented in the Unified Form Language (UFL) for FEniCS. This repository is dependent upon the `composite-uFJC-scission <https://pypi.org/project/composite-ufjc-scission/>`_ Python package.
 
 ************
 Installation

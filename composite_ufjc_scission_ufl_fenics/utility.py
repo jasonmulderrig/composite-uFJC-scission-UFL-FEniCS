@@ -4,6 +4,7 @@ implemented in the Unified Form Language (UFL) for FEniCS.
 
 # import necessary libraries
 from __future__ import division
+from dolfin import *
 import os
 import pathlib
 import pickle
@@ -57,23 +58,22 @@ def latex_formatting_figure(post_processing_parameters):
     This function accepts pre-defined post-processing parameters and
     sets various matplotlib plot formatting settings accordingly.
     """
-
     ppp = post_processing_parameters
 
     # LaTeX plot formatting settings
-    plt.rcParams['axes.linewidth'] = ppp.axes_linewidth
-    plt.rcParams['font.family']    = ppp.font_family
+    plt.rcParams['axes.linewidth'] = ppp["axes_linewidth"]
+    plt.rcParams['font.family']    = ppp["font_family"]
     # comment the line below out in WSL2, uncomment the line below in
     # native Linux on workstation
-    plt.rcParams['text.usetex'] = ppp.text_usetex
+    plt.rcParams['text.usetex']    = ppp["text_usetex"]
     
     # plot axis tick settings
-    plt.rcParams['ytick.right']     = ppp.ytick_right
-    plt.rcParams['ytick.direction'] = ppp.ytick_direction
-    plt.rcParams['xtick.top']       = ppp.xtick_top
-    plt.rcParams['xtick.direction'] = ppp.xtick_direction
+    plt.rcParams['ytick.right']     = ppp["ytick_right"]
+    plt.rcParams['ytick.direction'] = ppp["ytick_direction"]
+    plt.rcParams['xtick.top']       = ppp["xtick_top"]
+    plt.rcParams['xtick.direction'] = ppp["xtick_direction"]
     
-    plt.rcParams["xtick.minor.visible"] = ppp.xtick_minor_visible
+    plt.rcParams["xtick.minor.visible"] = ppp["xtick_minor_visible"]
 
 def save_current_figure(
         savedir, xlabel, xlabelfontsize, ylabel, ylabelfontsize, name):
