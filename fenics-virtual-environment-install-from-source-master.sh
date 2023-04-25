@@ -143,7 +143,7 @@ fi
 source bin/activate
 
 pip3 install wheel && pip3 install --upgrade setuptools && pip3 install --upgrade pip
-pip3 install numpy==1.21.6 scipy mpmath sympy matplotlib pynverse composite-ufjc-scission==1.3.7
+pip3 install numpy==1.21.6 scipy mpmath sympy matplotlib pynverse
 pip3 install mpi4py
 
 pip3 uninstall gmsh-dev gmsh-sdk gmsh-sdk-git
@@ -170,5 +170,7 @@ mkdir dolfin/build && cd dolfin/build && cmake .. && sudo make install && cd ../
 mkdir mshr/build   && cd mshr/build   && cmake .. && sudo make install && cd ../..
 cd dolfin/python && pip3 install . && cd ../..
 cd mshr/python   && pip3 install . && cd ../..
+
+pip3 install composite-ufjc-scission==1.3.8
 
 deactivate
