@@ -116,22 +116,22 @@ class CompositeuFJCUFLFEniCS(object):
         
         beta_tilde_psb = (self.kappa_nu+3.) * (1.-lmbda_nu)
 
-        trm_i   = 2. * self.kappa_nu + 3.
-        trm_ii  = 2.
+        trm_i = 2. * self.kappa_nu + 3.
+        trm_ii = 2.
         trm_iii = 2. * self.kappa_nu
         gamma_tilde_psb = trm_i * (lmbda_nu**2-trm_ii*lmbda_nu) + trm_iii
 
-        trm_i   = self.kappa_nu + 1.
-        trm_ii  = 3.
+        trm_i = self.kappa_nu + 1.
+        trm_ii = 3.
         trm_iii = 2.
-        trm_iv  = self.kappa_nu
-        trm_v   = 1.
+        trm_iv = self.kappa_nu
+        trm_v = 1.
         delta_tilde_psb = (
             trm_i * (trm_ii*lmbda_nu**2-lmbda_nu**3)
             - trm_iii * (trm_iv*lmbda_nu+trm_v)
         )
 
-        pi_tilde_psb_nmrtr  = (
+        pi_tilde_psb_nmrtr = (
             3. * alpha_tilde_psb * gamma_tilde_psb - beta_tilde_psb**2
         )
         pi_tilde_psb_dnmntr = 3. * alpha_tilde_psb**2
@@ -192,29 +192,29 @@ class CompositeuFJCUFLFEniCS(object):
         # sub-critical Pade approximant
         alpha_tilde_psb = 1.
 
-        trm_i  = -3. * (self.kappa_nu+1.)
+        trm_i = -3. * (self.kappa_nu+1.)
         trm_ii = -(2.*self.kappa_nu+3.)
-        beta_tilde_psb_nmrtr  = trm_i + lmbda_c_eq * trm_ii
+        beta_tilde_psb_nmrtr = trm_i + lmbda_c_eq * trm_ii
         beta_tilde_psb_dnmntr = self.kappa_nu + 1.
         beta_tilde_psb = beta_tilde_psb_nmrtr / beta_tilde_psb_dnmntr
 
-        trm_i   = 2. * self.kappa_nu
-        trm_ii  = 4. * self.kappa_nu + 6.
+        trm_i = 2. * self.kappa_nu
+        trm_ii = 4. * self.kappa_nu + 6.
         trm_iii = self.kappa_nu + 3.
         gamma_tilde_psb_nmrtr = trm_i + lmbda_c_eq * (trm_ii+lmbda_c_eq*trm_iii)
         gamma_tilde_psb_dnmntr = self.kappa_nu + 1.
         gamma_tilde_psb = gamma_tilde_psb_nmrtr / gamma_tilde_psb_dnmntr
 
-        trm_i   = 2.
-        trm_ii  = 2. * self.kappa_nu
+        trm_i = 2.
+        trm_ii = 2. * self.kappa_nu
         trm_iii = self.kappa_nu + 3.
         delta_tilde_psb_nmrtr = (
             trm_i - lmbda_c_eq * (trm_ii+lmbda_c_eq*(trm_iii+lmbda_c_eq))
         )
         delta_tilde_psb_dnmntr = self.kappa_nu + 1.
-        delta_tilde_psb  = delta_tilde_psb_nmrtr / delta_tilde_psb_dnmntr
+        delta_tilde_psb = delta_tilde_psb_nmrtr / delta_tilde_psb_dnmntr
 
-        pi_tilde_psb_nmrtr  = (
+        pi_tilde_psb_nmrtr = (
             3. * alpha_tilde_psb * gamma_tilde_psb - beta_tilde_psb**2
         )
         pi_tilde_psb_dnmntr = 3. * alpha_tilde_psb**2
@@ -249,7 +249,7 @@ class CompositeuFJCUFLFEniCS(object):
 
         # super-critical Bergstrom approximant
         alpha_tilde_bsp = 1.
-        beta_tilde_bsp  = -3.
+        beta_tilde_bsp = -3.
         gamma_tilde_bsp = 3. - self.zeta_nu_char**2 / self.kappa_nu
         delta_tilde_bsp = self.zeta_nu_char**2 / self.kappa_nu * lmbda_c_eq - 1.
 
@@ -257,7 +257,7 @@ class CompositeuFJCUFLFEniCS(object):
             3. * alpha_tilde_bsp * gamma_tilde_bsp - beta_tilde_bsp**2
         )
         pi_tilde_bsp_dnmntr = 3. * alpha_tilde_bsp**2
-        pi_tilde_bsp  = pi_tilde_bsp_nmrtr / pi_tilde_bsp_dnmntr
+        pi_tilde_bsp = pi_tilde_bsp_nmrtr / pi_tilde_bsp_dnmntr
 
         rho_tilde_bsp_nmrtr = (
             2. * beta_tilde_bsp**3
@@ -310,12 +310,12 @@ class CompositeuFJCUFLFEniCS(object):
         chain stretch minus the segment stretch plus one. This function
         is implemented in the Unified Form Language (UFL) for FEniCS.
         """
-        trm_i   = 3.
-        trm_ii  = -1.00651 * lmbda_comp_nu**2
+        trm_i = 3.
+        trm_ii = -1.00651 * lmbda_comp_nu**2
         trm_iii = -0.962251 * lmbda_comp_nu**4
-        trm_iv  = 1.47353 * lmbda_comp_nu**6
-        trm_v   = -0.48953 * lmbda_comp_nu**8
-        nmrtr  = lmbda_comp_nu * (trm_i+trm_ii+trm_iii+trm_iv+trm_v)
+        trm_iv = 1.47353 * lmbda_comp_nu**6
+        trm_v = -0.48953 * lmbda_comp_nu**8
+        nmrtr = lmbda_comp_nu * (trm_i+trm_ii+trm_iii+trm_iv+trm_v)
         dnmntr = (1.-lmbda_comp_nu) * (1.+1.01524*lmbda_comp_nu)
         dnmntr = conditional(ge(dnmntr, DOLFIN_EPS), dnmntr, DOLFIN_EPS)
         return nmrtr / dnmntr
@@ -332,20 +332,20 @@ class CompositeuFJCUFLFEniCS(object):
         stretch plus one. This function is implemented in the Unified
         Form Language (UFL) for FEniCS.
         """
-        ln_arg_i  = 1.00000000002049 - lmbda_comp_nu
+        ln_arg_i = 1.00000000002049 - lmbda_comp_nu
         ln_arg_ii = lmbda_comp_nu + 0.98498877114821
 
-        trm_i    = 0.0602726941412868 * lmbda_comp_nu**8
-        trm_ii   = 0.00103401966455583 * lmbda_comp_nu**7
-        trm_iii  = -0.162726405850159 * lmbda_comp_nu**6
-        trm_iv   = -0.00150537112388157 * lmbda_comp_nu**5
-        trm_v    = -0.00350216312906114 * lmbda_comp_nu**4
-        trm_vi   = -0.00254138511870934 * lmbda_comp_nu**3
-        trm_vii  = 0.488744117329956 * lmbda_comp_nu**2
+        trm_i = 0.0602726941412868 * lmbda_comp_nu**8
+        trm_ii = 0.00103401966455583 * lmbda_comp_nu**7
+        trm_iii = -0.162726405850159 * lmbda_comp_nu**6
+        trm_iv = -0.00150537112388157 * lmbda_comp_nu**5
+        trm_v = -0.00350216312906114 * lmbda_comp_nu**4
+        trm_vi = -0.00254138511870934 * lmbda_comp_nu**3
+        trm_vii = 0.488744117329956 * lmbda_comp_nu**2
         trm_viii = 0.0071635921950366 * lmbda_comp_nu
-        trm_ix   = -0.999999503781195 * ln(ln_arg_i)
-        trm_x    = -0.992044340231098 * ln(ln_arg_ii)
-        trm_xi   = -0.0150047080499398
+        trm_ix = -0.999999503781195 * ln(ln_arg_i)
+        trm_x = -0.992044340231098 * ln(ln_arg_ii)
+        trm_xi = -0.0150047080499398
         return (
             trm_i + trm_ii + trm_iii + trm_iv + trm_v + trm_vi + trm_vii
             + trm_viii + trm_ix + trm_x + trm_xi
